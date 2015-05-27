@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoggedOut_MessageInfo" xml:space="preserve">
-    <value>Click &lt;a ng-href="{{redirectUrlVal}}"&gt;here&lt;/a&gt; to return to the {{clientNameVal}} application.</value>
+    <value>Click &lt;a href="{{redirectUrlVal}}"&gt;here&lt;/a&gt; to return to the {{clientNameVal}} application.</value>
   </data>
   <data name="LoggedOut_PageHeader" xml:space="preserve">
     <value>Logout</value>

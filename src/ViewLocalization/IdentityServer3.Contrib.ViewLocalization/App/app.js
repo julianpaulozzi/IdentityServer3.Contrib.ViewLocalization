@@ -11,22 +11,32 @@
 
     (function () {
         var app = angular.module("app", [
+            'ngSanitize',
             'ngCookies',
             'pascalprecht.translate'    // See: https://github.com/angular-translate/angular-translate
         ]);
 
-        app.config(['$translateProvider', 'localeConfig', function ($translateProvider, localeConfig) {
-            $translateProvider.useSanitizeValueStrategy('escapeParameters');
+        app.config(['$translateProvider', 'localeConfig', 'Model', function ($translateProvider, localeConfig, Model) {
+            $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
             $translateProvider.translations(localeConfig.preferredLanguage, localeConfig.values);
             $translateProvider.useUrlLoader('/' + localeConfig.loaderUrl + '/' + localeConfig.part);
             $translateProvider.preferredLanguage(localeConfig.preferredLanguage);
+            $translateProvider.useCookieStorage();
         }]);
 
-        app.run(['$rootScope', '$translate', 'localeConfig', function ($rootScope, $translate, localeConfig) {
+        app.run(['$rootScope', '$translate', 'localeConfig', '$sce', function ($rootScope, $translate, localeConfig, $sce) {
 
             init();
 
             function init() {
+
+                /*for (var key in localeConfig.values) {
+                    if (localeConfig.values.hasOwnProperty(key)) {
+                        var html = localeConfig.values[key];
+                        $sce.trustAsHtml(html);
+                    }
+                }*/
+
                 $rootScope.flags = {
                     loadingTranslation: false
                 };

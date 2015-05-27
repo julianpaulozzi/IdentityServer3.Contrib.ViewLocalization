@@ -72,7 +72,7 @@ namespace IdentityServer3.Contrib.ViewLocalization
         }
     }
 
-    public static class ContextExtensions
+    internal static class ContextExtensions
     {
         public static string GetFirstAcceptLanguageHeader(this HttpRequestMessage request)
         {
@@ -92,6 +92,26 @@ namespace IdentityServer3.Contrib.ViewLocalization
                     .OrderBy(p => p.Quality).Select(p => p.Value).ToList();
 
             return language ?? new List<string>();
+        }
+
+
+        public static IEnumerable<string> GetRequestScopesNames(this HttpRequestMessage request)
+        {
+            var values = request.Headers.Referrer.ParseQueryString().GetValues(Constants.AuthorizeRequest.Scope);
+            if (values != null && values.Any())
+            {
+                var scopes = values[0].Split(null);
+                return scopes;
+            }
+
+            return null;
+        }
+
+        public static string GetLanguageCookie(this HttpRequestMessage request)
+        {
+            var allCookies = request.Headers.GetCookies().SelectMany(p => p.Cookies);
+            var ngTranslateCookie = allCookies.FirstOrDefault(p => p.Name.Equals(VLConstants.Cookies.LanguageCookieName));
+            return ngTranslateCookie != null ? ngTranslateCookie.Value : null;
         }
     }
 }

@@ -18,7 +18,7 @@ using System.Web.Http;
 
 namespace IdentityServer3.Contrib.ViewLocalization.Endpoints
 {
-    [Route("scripts/{action}")]
+    [Route(VLConstants.RoutePaths.Scripts)]
     public class ScriptsController : ApiController
     {
         [HttpGet]

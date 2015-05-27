@@ -8,7 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IdentityServer3.Contrib.ViewLocalization.Resources {
+namespace IdentityServer3.Contrib.ViewLocalization.Resources.LoggedOut {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -58,7 +61,7 @@ namespace IdentityServer3.Contrib.ViewLocalization.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click &lt;a ng-href=&quot;{{redirectUrlVal}}&quot;&gt;here&lt;/a&gt; to return to the {{clientNameVal}} application..
+        ///   Looks up a localized string similar to Click &lt;a href=&quot;{{redirectUrlVal}}&quot;&gt;here&lt;/a&gt; to return to the {{clientNameVal}} application..
         /// </summary>
         internal static string LoggedOut_MessageInfo {
             get {

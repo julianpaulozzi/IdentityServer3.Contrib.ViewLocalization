@@ -90,7 +90,7 @@ gulp.task("app-js", function () {
     return gulp.src(config.allAppJS)
         //.pipe(sourcemaps.init())
         .pipe(concat("app.min.js")) // You can use other plugins that also support gulp-sourcemaps
-        //.pipe(uglify())
+        .pipe(uglify())
         //.pipe(sourcemaps.write(".", { sourceRoot: "./" })) // Now the sourcemaps are added to the .js file
         .pipe(gulp.dest(config.jsOutputPath));
 });

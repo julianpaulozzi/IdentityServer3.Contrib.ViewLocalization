@@ -27,7 +27,8 @@
     "angular-cookies": "1.2.26",
     "bootstrap": "3.0.3",
     "angular-translate": "2.7.0",
-    "angular-translate-loader-url": "2.7.0"
+    "angular-translate-loader-url": "2.7.0",
+    "angular-translate-storage-cookie": "2.7.0"
   },
   "resolutions": {
     "angular": ">=1.2.26 <=1.4"

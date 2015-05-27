@@ -11,10 +11,35 @@
                 { "pt-BR" },
             };
         }
-        
+
+        public static class LocalizationParts
+        {
+            public const string Commun_Part = "commun";
+            public const string Welcome_Part = "welcome";
+            public const string Login_Part = "login";
+            public const string Logout_Part = "logout";
+            public const string Loggedout_Part = "loggedout";
+            public const string Consent_Part = "consent";
+            public const string Permissions_Part = "permissions";
+            public const string Error_Part = "error";
+            public const string Scopes_Part = "scopes";
+        }
+
+        public static class Cookies
+        {
+            public const string LanguageCookieName = "NG_TRANSLATE_LANG_KEY";
+        }
+
         public static class RouteNames
         {
             public const string Welcome = "locale.welcome";
+        }
+
+        public static class RoutePaths
+        {
+            public const string Locale = "locale";
+            public const string LocaleWithPart = "locale/{part}";
+            public const string Scripts = "scripts/{action}";
         }
 
         public static class Controllers

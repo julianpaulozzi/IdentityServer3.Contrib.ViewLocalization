@@ -28,6 +28,7 @@ var GulpConfig = (function () {
             "bower_components/angular-sanitize/angular-sanitize.min.js",
             "bower_components/angular-cookies/angular-cookies.min.js",
             "bower_components/angular-translate/angular-translate.min.js",
+            "bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js",
             "bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js"
         ];
 

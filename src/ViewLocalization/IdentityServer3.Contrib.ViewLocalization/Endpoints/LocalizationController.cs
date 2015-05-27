@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System.Threading;
 using System.Web.Http;
 
 namespace IdentityServer3.Contrib.ViewLocalization.Endpoints
@@ -23,12 +22,12 @@ namespace IdentityServer3.Contrib.ViewLocalization.Endpoints
     {
         [HttpGet]
         [AllowAnonymous]
-        [Route("locale")]
-        [Route("locale/{part}")]
+        [Route(VLConstants.RoutePaths.Locale)]
+        [Route(VLConstants.RoutePaths.LocaleWithPart)]
         public IHttpActionResult Get(string lang, string part = "")
         {
             if (string.IsNullOrEmpty(part))
-                part = TranslationManager.Welcome_Part;
+                part = VLConstants.LocalizationParts.Welcome_Part;
 
             var resourceJson = TranslationManager.GetResourceJson(Request, lang, part);
             return Ok(resourceJson);
