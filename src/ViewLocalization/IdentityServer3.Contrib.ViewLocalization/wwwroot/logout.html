@@ -1,0 +1,21 @@
+<div class="page-header">
+    <h1 data-translate="Logout_PageHeader">Logout</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <p data-translate="Logout_MessageInfo"
+           translate-values="{ 'siteNameVal': model.siteName }">
+            Would you like to logout of {{siteNameVal}}?
+        </p>
+        <form name="form" method="post" action="{{model.logoutUrl}}">
+            <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
+
+            <fieldset>
+                <div class="form-group">
+                    <button class="btn btn-primary" data-translate="Logout_ConfirmButton">Yes</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-csp ng-controller="LayoutCtrl">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@{siteName}</title>
+    <link href="@{applicationPath}/content/styles.css" rel="stylesheet" />
+    @{stylesheets}
+</head>
+<body lang="{{$root.locale.lang}}" ng-cloak>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@{applicationPath}">
+                    <span>@{siteName}</span>
+                </a>
+            </div>
+            <ul class="nav navbar-nav" ng-if="model.currentUser" ng-cloak>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{model.currentUser}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{model.logoutUrl}}" data-translate="Logout">Logout</a></li>
+                        <li class="divider" ng-if="model.loginWithDifferentAccountUrl"></li>
+                        <li>
+                            <a href="{{model.loginWithDifferentAccountUrl}}" 
+                               ng-if="model.loginWithDifferentAccountUrl"
+                               data-translate="LoginWithDifferentAccount">
+                                Login With Different Account
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" data-ng-if="$root.locale.allowChangeLanguage">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span data-ng-if="$root.flags.loadingTranslation">
+                            <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>&nbsp;
+                            <span data-translate="LoadingWithEllipsis">Loading...</span>
+                        </span>
+                        <span data-ng-show="!$root.flags.loadingTranslation">{{$root.locale.languageHeader}}</span>&nbsp;
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li data-ng-repeat="language in $root.locale.availableLanguages"
+                            data-ng-class="{'active':language.active}"
+                            data-ng-click="$root.changeLanguage(language)"
+                            class="pointer">
+                            <a>{{language.DisplayName}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='container page-@{page}' ng-cloak>
+        @{pageContent}
+    </div>
+
+    <script id='modelJson' type='application/json'>
+        @{model}
+    </script>
+    <script src="@{applicationPath}/scripts/scripts.js"></script>
+    <script src="@{applicationPath}/scripts/locale.js?part=@{page}"></script>
+    @{scripts}
+</body>
+</html>

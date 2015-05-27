@@ -1,0 +1,52 @@
+<div class="row page-header">
+    <div class="col-sm-10">
+        <h1 data-translate="Perm_PageHeader">
+            Client Application Permissions
+        </h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div ng-if="model.errorMessage" class="alert alert-danger">
+            <strong data-translate="Perm_ErrorPanelPrefix">Error:</strong>
+            {{model.errorMessage}}
+        </div>
+    </div>
+
+    <div class="col-sm-8" ng-hide="model.clients">
+        <div class="alert alert-info" data-translate="Perm_EmptyPermissionMessage">
+            You have not given permission to any applications
+        </div>
+    </div>
+</div>
+
+<div class="permissions">
+    <div ng-repeat="client in model.clients" class="row permission">
+        <div class="col-sm-2">
+            <img ng-src="{{client.clientLogoUrl}}">
+        </div>
+        <div class="col-sm-8">
+            <div class="permission-clientname">{{client.clientName}}</div>
+            <div ng-if="client.identityPermissions">
+                <div class="permission-type" data-translate="Perm_IdentityPermissionsHeader">Identity Permissions</div>
+                <ul>
+                    <li ng-repeat="permission in client.identityPermissions" ng-bind="permission.displayName"></li>
+                </ul>
+            </div>
+            <div ng-if="client.resourcePermissions">
+                <div class="permission-type" data-translate="Perm_ResourcePermissionsHeader">Resource Permissions</div>
+                <ul>
+                    <li ng-repeat="permission in client.resourcePermissions" ng-bind="permission.displayName"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <form name="form" method="post" action="{{model.revokePermissionUrl}}" class="consent-form">
+                <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
+                <input type="hidden" name="clientId" value="{{client.clientId}}">
+                <button class="btn btn-danger" data-translate="Perm_RevokeAccessButton">Revoke Access</button>
+            </form>
+        </div>
+    </div>
+</div>

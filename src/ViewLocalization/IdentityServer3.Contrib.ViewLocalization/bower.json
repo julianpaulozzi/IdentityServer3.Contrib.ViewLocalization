@@ -1,0 +1,35 @@
+{
+  "name": "IdentityServer3.Contrib.ViewLocalization",
+  "version": "1.0.0",
+  "authors": [
+    "Julian Paulozzi <julianpaulozzi@gmail.com>"
+  ],
+  "description": "Dependencies of IdentityServerV3s views (UI) localization",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "license": "Apache-2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "angular": "1.2.26",
+    "angular-i18n": "1.2.26",
+    "angular-sanitize": "1.2.26",
+    "angular-cookies": "1.2.26",
+    "bootstrap": "3.0.3",
+    "angular-translate": "2.7.0",
+    "angular-translate-loader-url": "2.7.0"
+  },
+  "resolutions": {
+    "angular": ">=1.2.26 <=1.4"
+  }
+}

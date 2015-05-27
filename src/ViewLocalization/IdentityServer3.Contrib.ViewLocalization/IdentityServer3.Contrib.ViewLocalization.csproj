@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47947D77-0E07-4AD5-8106-8DE2061546F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IdentityServer3.Contrib.ViewLocalization</RootNamespace>
+    <AssemblyName>IdentityServer3.Contrib.ViewLocalization</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\AntiXssLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Thinktecture.IdentityServer3, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityServer3.1.6.1\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AppBuilderExtension.cs" />
+    <Compile Include="Configuration\ConfigureServerBaseUrlExtension.cs" />
+    <Compile Include="Configuration\FileServerExtensions.cs" />
+    <Compile Include="Configuration\Models\IdentityServerViewLocalizationOptions.cs" />
+    <Compile Include="Configuration\Models\LanguageAvailabilityPolicy.cs" />
+    <Compile Include="Configuration\Models\LocalizationServiceOptions.cs" />
+    <Compile Include="Configuration\Models\ViewServiceOptions.cs" />
+    <Compile Include="Configuration\OptionsValidationExtension.cs" />
+    <Compile Include="Core\Models\LanguageInfo.cs" />
+    <Compile Include="Core\Models\LanguagesCollection.cs" />
+    <Compile Include="Configuration\OptionsState.cs" />
+    <Compile Include="Configuration\WebApiConfig.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core\AssetManager.cs" />
+    <Compile Include="Core\LocaleViewServices.cs" />
+    <Compile Include="Core\Models\ResourceRequestInfo.cs" />
+    <Compile Include="Core\Models\ScopeLocalization.cs" />
+    <Compile Include="Core\Models\ScopeLocalizationCollection.cs" />
+    <Compile Include="Core\Models\ScopeTranslation.cs" />
+    <Compile Include="Core\Models\ScopeTranslations.cs" />
+    <Compile Include="Core\TranslationCache.cs" />
+    <Compile Include="Core\TranslationManager.cs" />
+    <Compile Include="Endpoints\LocalizationController.cs" />
+    <Compile Include="Endpoints\Results\AngularConstantResult.cs" />
+    <Compile Include="Endpoints\Results\WelcomeActionResult.cs" />
+    <Compile Include="Endpoints\ScriptsController.cs" />
+    <Compile Include="Endpoints\WelcomeController.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Commun\Commun.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Commun.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Consent\Consent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Consent.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Error\Error.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Error.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LoggedOut\LoggedOut.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoggedOut.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Login\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Logout\Logout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Permissions\Permissions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permissions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Scopes\Scopes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Scopes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Welcome\Welcome.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Welcome.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="App\app.less" />
+    <None Include="bower.json" />
+    <None Include="package.json" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\Commun\Commun.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Commun\Commun.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Commun.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Consent\Consent.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Consent\Consent.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Consent.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Error\Error.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Error\Error.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Error.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LoggedOut\LoggedOut.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\LoggedOut\LoggedOut.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoggedOut.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Login\Login.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Login\Login.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Logout\Logout.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Logout\Logout.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Logout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Permissions\Permissions.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Permissions\Permissions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Permissions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scopes\Scopes.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Scopes\Scopes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Scopes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Welcome\Welcome.pt-BR.resx" />
+    <EmbeddedResource Include="Resources\Welcome\Welcome.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Welcome.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <EmbeddedResource Include="wwwroot\content\styles.css.map" />
+    <EmbeddedResource Include="wwwroot\scripts\scripts.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\app.directives.js" />
+    <Content Include="App\app.js" />
+    <Content Include="App\app.layout-ctrl.js" />
+    <Content Include="App\consent.html" />
+    <Content Include="App\error.html" />
+    <Content Include="App\layout.html" />
+    <Content Include="App\loggedOut.html" />
+    <Content Include="App\login.html" />
+    <Content Include="App\logout.html" />
+    <Content Include="App\permissions.html" />
+    <Content Include="App\welcome.html" />
+    <Content Include="app_components\htmlencode\encoder.js" />
+    <Content Include="app_components\htmlencode\encoder.min.js" />
+    <Content Include="gulpfile.config.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="TODO.txt" />
+    <EmbeddedResource Include="wwwroot\scripts\scripts.js" />
+    <EmbeddedResource Include="wwwroot\content\styles.css" />
+    <EmbeddedResource Include="wwwroot\consent.html" />
+    <EmbeddedResource Include="wwwroot\error.html" />
+    <EmbeddedResource Include="wwwroot\layout.html" />
+    <EmbeddedResource Include="wwwroot\loggedOut.html" />
+    <EmbeddedResource Include="wwwroot\login.html" />
+    <EmbeddedResource Include="wwwroot\logout.html" />
+    <EmbeddedResource Include="wwwroot\permissions.html" />
+    <EmbeddedResource Include="wwwroot\welcome.html" />
+    <EmbeddedResource Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
