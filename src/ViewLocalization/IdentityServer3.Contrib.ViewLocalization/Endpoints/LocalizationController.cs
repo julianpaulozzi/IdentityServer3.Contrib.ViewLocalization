@@ -15,6 +15,7 @@
  */
 
 using System.Web.Http;
+using IdentityServer3.Contrib.ViewLocalization.Configuration;
 
 namespace IdentityServer3.Contrib.ViewLocalization.Endpoints
 {

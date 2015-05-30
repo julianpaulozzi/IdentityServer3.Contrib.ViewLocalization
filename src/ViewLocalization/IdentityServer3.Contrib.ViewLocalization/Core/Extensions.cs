@@ -20,6 +20,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using Microsoft.Owin;
 using Thinktecture.IdentityServer.Core;
 
 namespace IdentityServer3.Contrib.ViewLocalization
@@ -91,6 +93,17 @@ namespace IdentityServer3.Contrib.ViewLocalization
                 language = request.Headers.AcceptLanguage
                     .OrderBy(p => p.Quality).Select(p => p.Value).ToList();
 
+            return language ?? new List<string>();
+        }
+
+        public static IEnumerable<string> GetAcceptLanguagesHeader(this IOwinRequest request)
+        {
+            List<string> language = null;
+            if (request != null && request.Headers != null && request.Headers.ContainsKey("Accept-Language"))
+            {
+                var commaSeparatedValues = request.Headers.GetCommaSeparatedValues("Accept-Language");
+                return commaSeparatedValues.Select(StringWithQualityHeaderValue.Parse).OrderBy(p => p.Quality).Select(p => p.Value);
+            }
             return language ?? new List<string>();
         }
 

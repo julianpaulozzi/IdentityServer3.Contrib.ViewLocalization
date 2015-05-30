@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IdentityServer3.Contrib.ViewLocalization.Configuration;
+using Microsoft.Owin;
 using Thinktecture.IdentityServer.Core.Models;
 using Thinktecture.IdentityServer.Core.Services;
 using Thinktecture.IdentityServer.Core.ViewModels;
@@ -37,10 +38,12 @@ namespace IdentityServer3.Contrib.ViewLocalization
         };
 
         private readonly ViewServiceOptions _config;
-        public LocaleViewServices()
+        private OwinContext _context;
+
+        public LocaleViewServices(OwinEnvironmentService owin, IdentityServerViewLocalizationOptions options)
         {
-            // TODO: Replace with DependencyResolver
-            _config = OptionsState.Current.Options.ViewServiceOptions;
+            _context = new OwinContext(owin.Environment);
+            _config = options.ViewServiceOptions;
         }
 
         public virtual async Task<Stream> Login(LoginViewModel model, SignInMessage message)

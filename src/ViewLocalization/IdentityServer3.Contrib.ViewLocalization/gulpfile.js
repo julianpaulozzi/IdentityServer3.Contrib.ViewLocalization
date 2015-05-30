@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='default' />
+/// <binding BeforeBuild='build' />
 var gulp = require("gulp"),
     header = require("gulp-header"),
     del = require("del"),
@@ -115,3 +115,5 @@ gulp.task("clean-root", function (cb) {
 });
 
 gulp.task("default", ["copy-fonts", "copy-pages", "app-less-compile", "all-css", "libs-js", "app-js", "all-js", "clean-temp"]);
+
+gulp.task("build", ["copy-pages", "app-less-compile", "all-css", "libs-js", "app-js", "all-js", "clean-temp"]);

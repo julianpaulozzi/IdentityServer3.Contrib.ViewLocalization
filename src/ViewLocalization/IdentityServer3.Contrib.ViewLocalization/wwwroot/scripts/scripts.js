@@ -1,6 +1,6 @@
 /**
  * IdentityServer3.Contrib.ViewLocalization - Implementation of IdentityServerV3s views (UI) localization
- * @version v1.0.0 - 2015-05-27T21:04:29.867Z
+ * @version v1.0.0 - 2015-05-29T17:29:49.209Z
  * @license Apache-2.0 - 2015
  */
 /*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */

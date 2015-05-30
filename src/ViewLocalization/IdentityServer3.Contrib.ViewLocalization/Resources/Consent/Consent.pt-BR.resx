@@ -124,7 +124,7 @@
     <value>Acesso ao aplicativo</value>
   </data>
   <data name="Cons_DoNotAllowButton" xml:space="preserve">
-    <value>Não permitem</value>
+    <value>Não permitir</value>
   </data>
   <data name="Cons_ErrorPanelPrefix" xml:space="preserve">
     <value>Erro:</value>

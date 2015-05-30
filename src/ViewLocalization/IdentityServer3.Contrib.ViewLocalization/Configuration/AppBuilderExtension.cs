@@ -37,6 +37,8 @@ namespace IdentityServer3.Contrib.ViewLocalization.Configuration
 
             OptionsState.Current.RegisterConfiguration(identityServerOptions, options);
 
+            DependenciesConfig.Configure(identityServerOptions, options);
+
             factory.ViewService = new Registration<IViewService>(typeof(LocaleViewServices));
 
             app.ConfigureIdentityServerBaseUrl(identityServerOptions.PublicOrigin);
@@ -52,6 +54,15 @@ namespace IdentityServer3.Contrib.ViewLocalization.Configuration
             app.UseWebApi(httpConfig);
 
             return app;
+        }
+    }
+
+    internal static class DependenciesConfig
+    {
+        public static void Configure(IdentityServerOptions identityServerOptions,
+            IdentityServerViewLocalizationOptions options)
+        {
+            identityServerOptions.Factory.Register(new Registration<IdentityServerViewLocalizationOptions>(options));
         }
     }
 }

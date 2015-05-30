@@ -23,8 +23,6 @@ using System.Net.Http;
 using System.Resources;
 using IdentityServer3.Contrib.ViewLocalization.Configuration;
 using IdentityServer3.Contrib.ViewLocalization.Resources;
-using IdentityServer3.Contrib.ViewLocalization.Resources.LoggedOut;
-using IdentityServer3.Contrib.ViewLocalization.Resources.Permissions;
 using Newtonsoft.Json.Linq;
 
 namespace IdentityServer3.Contrib.ViewLocalization
