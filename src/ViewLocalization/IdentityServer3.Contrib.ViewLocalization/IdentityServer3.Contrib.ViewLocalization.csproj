@@ -171,46 +171,55 @@
     <None Include="bower.json" />
     <None Include="package.json" />
     <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\Commun\Commun.fr.resx" />
     <EmbeddedResource Include="Resources\Commun\Commun.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Commun\Commun.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Commun.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Consent\Consent.fr.resx" />
     <EmbeddedResource Include="Resources\Consent\Consent.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Consent\Consent.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Consent.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Error\Error.fr.resx" />
     <EmbeddedResource Include="Resources\Error\Error.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Error\Error.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Error.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LoggedOut\LoggedOut.fr.resx" />
     <EmbeddedResource Include="Resources\LoggedOut\LoggedOut.pt-BR.resx" />
     <EmbeddedResource Include="Resources\LoggedOut\LoggedOut.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LoggedOut.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Login\Login.fr.resx" />
     <EmbeddedResource Include="Resources\Login\Login.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Login\Login.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Logout\Logout.fr.resx" />
     <EmbeddedResource Include="Resources\Logout\Logout.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Logout\Logout.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Logout.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Permissions\Permissions.fr.resx" />
     <EmbeddedResource Include="Resources\Permissions\Permissions.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Permissions\Permissions.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Permissions.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scopes\Scopes.fr.resx" />
     <EmbeddedResource Include="Resources\Scopes\Scopes.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Scopes\Scopes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Scopes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Welcome\Welcome.fr.resx" />
     <EmbeddedResource Include="Resources\Welcome\Welcome.pt-BR.resx" />
     <EmbeddedResource Include="Resources\Welcome\Welcome.resx">
       <Generator>ResXFileCodeGenerator</Generator>
