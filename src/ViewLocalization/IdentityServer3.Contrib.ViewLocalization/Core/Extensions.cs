@@ -78,12 +78,7 @@ namespace IdentityServer3.Contrib.ViewLocalization
     {
         public static string GetFirstAcceptLanguageHeader(this HttpRequestMessage request)
         {
-            string language = null;
-            if (request.Headers.AcceptLanguage != null)
-                language = request.Headers.AcceptLanguage
-                    .OrderBy(p=> p.Quality).Select(p => p.Value).FirstOrDefault();
-
-            return language;
+            return GetAcceptLanguagesHeader(request).FirstOrDefault();
         }
 
         public static IEnumerable<string> GetAcceptLanguagesHeader(this HttpRequestMessage request)
@@ -91,7 +86,7 @@ namespace IdentityServer3.Contrib.ViewLocalization
             List<string> language = null;
             if (request.Headers.AcceptLanguage != null)
                 language = request.Headers.AcceptLanguage
-                    .OrderBy(p => p.Quality).Select(p => p.Value).ToList();
+                    .OrderByDescending(p => p.Quality ?? 1).Select(p => p.Value).ToList();
 
             return language ?? new List<string>();
         }
@@ -102,7 +97,7 @@ namespace IdentityServer3.Contrib.ViewLocalization
             if (request != null && request.Headers != null && request.Headers.ContainsKey("Accept-Language"))
             {
                 var commaSeparatedValues = request.Headers.GetCommaSeparatedValues("Accept-Language");
-                return commaSeparatedValues.Select(StringWithQualityHeaderValue.Parse).OrderBy(p => p.Quality).Select(p => p.Value);
+                return commaSeparatedValues.Select(StringWithQualityHeaderValue.Parse).OrderByDescending(p => p.Quality ?? 1).Select(p => p.Value);
             }
             return language ?? new List<string>();
         }
